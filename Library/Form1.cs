@@ -1,4 +1,4 @@
-using System.ComponentModel;
+п»їusing System.ComponentModel;
 using System.Data;
 using System.Text;
 using System.Threading.Tasks.Dataflow;
@@ -23,26 +23,26 @@ namespace Library
             dataTable.Columns.Add(new DataColumn("Publish Year", typeof(int)));
             dataTable.Columns.Add(new DataColumn("Pages", typeof(int)));
             dataTable.Columns.Add(new DataColumn("Publisher", typeof(string)));
-            dataTable.Rows.Add(0, "Война и мир", "Л.Н. Толстой", "роман-эпопея", 1865, 960, "Русский вестник");
-            dataTable.Rows.Add(1, "Мертвые души", "Н.В. Гоголь", "комедия", 1875, 360, "Русский вестник");
-            dataTable.Rows.Add(2, "Тихий дон", "М.А. Шолохов", "роман", 1925, 560, "Новый мир");
-            dataTable.Rows.Add(3, "Евгений Онегин", "А.С. Пушкин", "поэма", 1845, 260, "Огонек");
-            //ниже добавление строк в таблице, надо в DataTable
+            dataTable.Rows.Add(0, "Р’РѕР№РЅР° Рё РјРёСЂ", "Р›.Рќ. РўРѕР»СЃС‚РѕР№", "СЂРѕРјР°РЅ-СЌРїРѕРїРµСЏ", 1865, 960, "Р СѓСЃСЃРєРёР№ РІРµСЃС‚РЅРёРє");
+            dataTable.Rows.Add(1, "РњРµСЂС‚РІС‹Рµ РґСѓС€Рё", "Рќ.Р’. Р“РѕРіРѕР»СЊ", "РєРѕРјРµРґРёСЏ", 1875, 360, "Р СѓСЃСЃРєРёР№ РІРµСЃС‚РЅРёРє");
+            dataTable.Rows.Add(2, "РўРёС…РёР№ РґРѕРЅ", "Рњ.Рђ. РЁРѕР»РѕС…РѕРІ", "СЂРѕРјР°РЅ", 1925, 560, "РќРѕРІС‹Р№ РјРёСЂ");
+            dataTable.Rows.Add(3, "Р•РІРіРµРЅРёР№ РћРЅРµРіРёРЅ", "Рђ.РЎ. РџСѓС€РєРёРЅ", "РїРѕСЌРјР°", 1845, 260, "РћРіРѕРЅРµРє");
+            //РЅРёР¶Рµ РґРѕР±Р°РІР»РµРЅРёРµ СЃС‚СЂРѕРє РІ С‚Р°Р±Р»РёС†Рµ, РЅР°РґРѕ РІ DataTable
             dgv_library.Columns.Clear();
             dgv_library.DataSource = dataTable;
         }
 
-        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void СѓРґР°Р»РёС‚СЊToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgv_library.SelectedRows[0].Index >= 0)
                 dataTable.Rows.RemoveAt(dgv_library.SelectedRows[0].Index);
         }
 
-        private void редактироватьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void СЂРµРґР°РєС‚РёСЂРѕРІР°С‚СЊToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgv_library.SelectedRows.Count > 0)
             {
-                //переделать под DataTable
+                //РїРµСЂРµРґРµР»Р°С‚СЊ РїРѕРґ DataTable
                 bufferBook = new Book(
                     Convert.ToInt32(dgv_library.SelectedRows[0].Cells[0].Value.ToString()),
                     dgv_library.SelectedRows[0].Cells[1].Value.ToString(),
@@ -72,12 +72,12 @@ namespace Library
             }
         }
 
-        private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
+        private void СЃРѕР·РґР°С‚СЊToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddBook addForm = new AddBook();
             if (addForm.ShowDialog() == DialogResult.OK)
             {
-                //переделать под DataTable
+                //РїРµСЂРµРґРµР»Р°С‚СЊ РїРѕРґ DataTable
                 bufferBook = addForm.AddableBook;
                 dataTable.Rows.Add(
                 bufferBook.Id,
@@ -101,7 +101,7 @@ namespace Library
             dgv_library.Sort(dgv_library.Columns[1], ListSortDirection.Descending);
         }
 
-        private void сохранитьВXMLToolStripMenuItem_Click(object sender, EventArgs e)
+        private void СЃРѕС…СЂР°РЅРёС‚СЊР’XMLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -120,7 +120,7 @@ namespace Library
             }
         }
 
-        private void загрузитьИзXMLToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Р·Р°РіСЂСѓР·РёС‚СЊРР·XMLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
