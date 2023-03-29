@@ -113,10 +113,10 @@ namespace Library
                 dataTable.WriteXml(streamWriter);
                 streamWriter.Close();
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                
+
             }
         }
 
@@ -158,6 +158,11 @@ namespace Library
         private void dESCToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             dgv_library.Sort(dgv_library.Columns[6], ListSortDirection.Descending);
+        }
+
+        private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Великолепная программа, просто чудо, версия 1.0. Разработчик: ");
         }
     }
 }

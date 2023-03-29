@@ -57,6 +57,7 @@
             поИздательствуToolStripMenuItem = new ToolStripMenuItem();
             aSCToolStripMenuItem2 = new ToolStripMenuItem();
             dESCToolStripMenuItem2 = new ToolStripMenuItem();
+            справкаToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgv_library).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -133,7 +134,7 @@
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, создатьToolStripMenuItem, редактироватьToolStripMenuItem, удалитьToolStripMenuItem, фильтрToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, создатьToolStripMenuItem, редактироватьToolStripMenuItem, удалитьToolStripMenuItem, фильтрToolStripMenuItem, справкаToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -268,6 +269,13 @@
             dESCToolStripMenuItem2.Text = "DESC";
             dESCToolStripMenuItem2.Click += dESCToolStripMenuItem2_Click;
             // 
+            // справкаToolStripMenuItem
+            // 
+            справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            справкаToolStripMenuItem.Size = new Size(65, 20);
+            справкаToolStripMenuItem.Text = "Справка";
+            справкаToolStripMenuItem.Click += справкаToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -316,5 +324,6 @@
         private ToolStripMenuItem поИздательствуToolStripMenuItem;
         private ToolStripMenuItem aSCToolStripMenuItem2;
         private ToolStripMenuItem dESCToolStripMenuItem2;
+        private ToolStripMenuItem справкаToolStripMenuItem;
     }
 }
