@@ -163,6 +163,27 @@ namespace Library
         private void справкаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Великолепная программа, просто чудо, версия 1.0. Разработчик: ");
+            my
         }
+
+        /// <summary>
+        /// Этот метод может выдать массив сообщений каскадов в отдельных окнах или в одном окне весь массив.
+        /// </summary>
+        /// <param name="method">Используйте cascade для вывода каждого сообщения в отдельном окне, или together для вывода всех сообщений в одном окне</param>
+        /// <returns>Не возвращает значения</returns>
+        void myMethod(string method, string[] text)
+        {
+            if (method == "cascade")
+                foreach (string str in text)
+                    MessageBox.Show(str);
+            if (method == "together")
+            {
+                string allText = "";
+                foreach (string str in text)
+                    allText += str;
+                MessageBox.Show(allText);
+            }
+        }
+
     }
 }
